@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Новогодний сайт</title>
+<style>
+  body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to bottom, #a0d8ef, #ffffff);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: #333;
+  }
+
+  /* Анимация снежинок */
+  .snowflake {
+    position: absolute;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    background: url('https://i.imgur.com/4M7IW3P.png') no-repeat center/contain;
+    opacity: 0.8;
+    animation: fall linear infinite;
+  }
+
+  @keyframes fall {
+    0% {transform: translateY(0); opacity: 1;}
+    100% {transform: translateY(100vh); opacity: 0.3;}
+  }
+
+  /* Елка с мерцающими огоньками */
+  .christmas-tree {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+
+  .tree-container {
+    position: relative;
+    width: 160px;
+    height: 250px;
+  }
+
+  /* Самл изображение елки */
+  .tree-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+    box-shadow: 0 0 20px #ffd700;
+    animation: glow 2s infinite alternate;
+  }
+
+  @keyframes glow {
+    0% {box-shadow: 0 0 20px #ffd700;}
+    100% {box-shadow: 0 0 40px #ffd700;}
+  }
+
+  /* Мерцающие огоньки на елке */
+  .lights {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+
+  .light {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background-color: #ff0000;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #ff0000;
+    animation: flicker 1.5s infinite alternate;
+  }
+
+
+
+  @keyframes flicker {
+    0% {opacity: 1;}
+    100% {opacity: 0.4;}
+  }
+
+  /* Заголовок с мерцающим эффектом  */
+  header h1 {
+    margin: 0;
+    font-size: 2.5em;
+    cursor: default;
+    transition: transform 0.3s, text-shadow 0.3s;
+    text-shadow: 0 0 10px #ffd700, 0 0 20px #ffd700;
+    animation: glow 2s infinite alternate;
+  }
+
+  @keyframes glow {
+    0% {text-shadow: 0 0 10px #ffd700, 0 0 20px #ffd700;}
+    100% {text-shadow: 0 0 20px #ffd700, 0 0 40px #ffd700;}
+  }
+
+  /* Остальные стили остаются без изменений */
+  section {
+    border: 3px dashed #d2232a;
+    padding: 20px;
+    margin-bottom: 40px;
+    border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.8);
+    position: relative;
+  }
+
+  nav {
+    display: flex;
+    justify-content: center;
+    background-color: #ffe600;
+    padding: 10px 0;
+    border-top: 5px dashed #d2232a;
+    border-bottom: 5px dashed #d2232a;
+  }
+
+  nav a {
+    color: #007a4e;
+    text-decoration: none;
+    margin: 0 20px;
+    font-weight: bold;
+    font-size: 1.2em;
+    padding: 5px 10px;
+    border-radius: 8px;
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+  }
+
+  nav a:hover {
+    background-color: #ffd700;
+    color: #fff;
+    box-shadow: 0 0 10px #ffd700;
+    transform: scale(1.05);
+  }
+
+  main {
+    padding: 20px;
+    max-width: 1000px;
+    margin: auto;
+  }
+
+  h2 {
+    color: #d2232a;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #d2232a;
+    padding-bottom: 10px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 2em;
+    text-shadow: 0 0 5px #fff;
+  }
+
+  .btn {
+    background-color: #007a4e;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 1em;
+    border-radius: 8px;
+    cursor: default;
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+    margin-top: 10px;
+  }
+
+  .btn:hover {
+    background-color: #005f3a;
+    transform: scale(1.05);
+    box-shadow: 0 0 10px #005f3a;
+  }
+
+  footer {
+    background-color: #007a4e;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 1.2em;
+    position: relative;
+    overflow: hidden;
+  }
+</style>
+</head>
+<body>
+
+<div class="snowflake" style="left: 10%; animation-duration: 12s; animation-delay: 0s;"></div>
+<div class="snowflake" style="left: 30%; animation-duration: 15s; animation-delay: 2s;"></div>
+<div class="snowflake" style="left: 50%; animation-duration: 10s; animation-delay: 4s;"></div>
+<div class="snowflake" style="left: 70%; animation-duration: 20s; animation-delay: 1s;"></div>
+<div class="snowflake" style="left: 90%; animation-duration: 13s; animation-delay: 3s;"></div>
+
+<header>
+  <h1>🎄 С Новым 2025 Годом! 🎅</h1>
+  <div class="christmas-tree">
+    <div class="tree-container">
+      <img src="https://png.klev.club/uploads/posts/2024-04/png-klev-club-xm10-p-yelka-narisovannaya-png-21.png" alt="Сверкающая елка" class="tree-img" />
+      <div class="lights">
+        <!-- Создаем огоньки с разными позициями и задержками -->
+        <div class="light" style="top: 20%; left: 50%; background-color: #ff0000; animation-delay: 0s;"></div>
+        <div class="light" style="top: 40%; left: 30%; background-color: #00ff00; animation-delay: 0.3s;"></div>
+        <div class="light" style="top: 60%; left: 70%; background-color: #0000ff; animation-delay: 0.6s;"></div>
+        <div class="light" style="top: 50%; left: 50%; background-color: #ffff00; animation-delay: 0.9s;"></div>
+        <div class="light" style="top: 35%; left: 20%; background-color: #ff00ff; animation-delay: 1.2s;"></div>
+        <div class="light" style="top: 55%; left: 80%; background-color: #00ffff; animation-delay: 1.5s;"></div>
+      </div>
+    </div>
+  </div>
+  <div class="ornament ornament1"></div>
+  <div class="ornament ornament2"></div>
+  <div class="ornament ornament3"></div>
+  <div class="ornament ornament4"></div>
+  <div class="ornament ornament5"></div>
+  <!-- ОгОньки -->
+  <div class="lights">
+    <div class="light red" style="top: 20%; left: 50%; animation-delay: 0s;"></div>
+    <div class="light green" style="top: 40%; left: 30%; animation-delay: 0.3s;"></div>
+    <div class="light blue" style="top: 60%; left: 70%; animation-delay: 0.6s;"></div>
+    <div class="light yellow" style="top: 50%; left: 50%; animation-delay: 0.9s;"></div>
+    <div class="light purple" style="top: 35%; left: 20%; animation-delay: 1.2s;"></div>
+    <div class="light cyan" style="top: 55%; left: 80%; animation-delay: 1.5s;"></div>
+  </div>
+</div>
+</div>
+
+</header>
+
+<nav>
+  <a href="#akczii">Акции🤶</a>
+  <a href="#galereya">Галерея🤶🏼</a>
+  <a href="#kontakty">Контакты🤶🏻</a>
+</nav>
+
+<main>
+  <section id="akczii">
+    <h2>Наши новогодние акции❄️</h2>
+    <p>Подарки, скидки и праздничные предложения! Не пропустите шанс сделать ваш праздник особенным.</p>
+    <button class="btn" disabled>Узнать больше</button>
+  </section>
+
+  <section id="galereya">
+    <h2>Галерея🔔</h2>
+    <p>Фотографии с наших новогодних мероприятий и украшений.</p>
+    <div style="text-align:center;">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWwSDG_dtk7OVB4pp3zIG_UNtNb-gA9-sODA&s" alt="Новогодний декор" style="max-width:100%; border-radius:20px; cursor:not-allowed; opacity:0.8"/>
+      <img src="https://img.freepik.com/free-photo/kitten-christmas-tree_23-2152021752.jpg?semt=ais_hybrid&w=740&q=80" alt="Новогодний декор" style="max-width:14%; border-radius:20px; cursor:not-allowed; opacity:0.8"/>
+      #САМ ФОТКАЛ
+    </div>
+  </section>
+
+  <section id="kontakty">
+    <h2>Контакты🦌🦌</h2>
+    <p>Свяжитесь с нами для заказа украшений и праздничных услуг: </p>
+    <button class="btn" disabled>Написать сообщение</button>
+  </section>
+</main>
+
+<div class="modal"></div>
+
+
+<footer>
+2025 Новогодний сайт. Пусть ваш праздник будет волшебным!
+</footer>
+
+</body>
+</html>
